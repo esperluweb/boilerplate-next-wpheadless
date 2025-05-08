@@ -4,6 +4,8 @@
 ![WordPress](https://img.shields.io/badge/WordPress-headless-blue?logo=wordpress)
 ![Node.js](https://img.shields.io/badge/Node.js-20%2B-green?logo=node.js)
 ![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v3.0-blue?logo=tailwind-css)
+
 
 Ce boilerplate permet de créer un site en utilisant **Next.js** avec un backend **WordPress Headless**. Le site affiche une page d'accueil avec tous les posts et une page pour afficher un post individuel. Ce projet utilise React 19, Next.js 15.3.2 et Node.js version 20+.
 
@@ -16,6 +18,7 @@ Avant de commencer, assure-toi d'avoir les éléments suivants :
 - **Un site WordPress configuré en mode headless** avec l'API REST activée
   - Le site WordPress doit avoir des permaliens configurés sous la forme `adresseweb.fr/exemple-article`
   - Il faut avoir accès à l'URL de l'API REST (par exemple, `https://tonsite.fr/wp-json/wp/v2`)
+- **Tailwind CSS** pour la gestion du style dans le projet (déjà inclus dans le boilerplate)
 
 ## Installation
 
@@ -55,7 +58,9 @@ Le projet est organisé de la manière suivante :
 ```
 /src
   /app
+    /layout.js       - Layout du site
     /page.js         - Page d'accueil avec tous les posts
+    /globals.css     - Fichier global pour les styles où Tailwind est déjà importé et configuré
     /[slug]
       /page.js       - Page pour afficher un post individuel
 ```
