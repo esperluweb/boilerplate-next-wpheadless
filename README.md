@@ -51,10 +51,6 @@ Le projet est organisé de la manière suivante :
 /pages
   /index.js       - Page d'accueil avec tous les posts
   /[slug].js      - Page pour afficher un post individuel
-
-/components
-  /PostList.js    - Composant pour afficher la liste des posts
-  /Post.js        - Composant pour afficher un post individuel
 ```
 
 - **`/pages/index.js`** : Affiche la liste de tous les posts récupérés depuis l'API WordPress.
