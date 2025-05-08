@@ -1,5 +1,10 @@
 # Boilerplate Next.js avec WordPress Headless
 
+![Next.js](https://img.shields.io/badge/Next.js-15.3.2-black?logo=next.js)
+![WordPress](https://img.shields.io/badge/WordPress-headless-blue?logo=wordpress)
+![Node.js](https://img.shields.io/badge/Node.js-20%2B-green?logo=node.js)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+
 Ce boilerplate permet de créer un site en utilisant **Next.js** avec un backend **WordPress Headless**. Le site affiche une page d'accueil avec tous les posts et une page pour afficher un post individuel. Ce projet utilise React 19, Next.js 15.3.2 et Node.js version 20+.
 
 ## Prérequis
