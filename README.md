@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Boilerplate Next.js avec WordPress Headless
 
-## Getting Started
+Ce boilerplate permet de créer un site en utilisant **Next.js** avec un backend **WordPress Headless**. Le site affiche une page d'accueil avec tous les posts et une page pour afficher un post individuel. Ce projet utilise React 19, Next.js 15.3.2 et Node.js version 20+.
 
-First, run the development server:
+## Prérequis
+
+Avant de commencer, assure-toi d'avoir les éléments suivants :
+
+- **Node.js** version 20+ (vérifie avec `node -v`)
+- **npm** ou **yarn** installé
+- **Un site WordPress configuré en mode headless** avec l'API REST activée
+  - Le site WordPress doit avoir des permaliens configurés sous la forme `adresseweb.fr/exemple-article`
+  - Il faut avoir accès à l'URL de l'API REST (par exemple, `https://tonsite.fr/wp-json/wp/v2`)
+
+## Installation
+
+1. Clone le repository de ce boilerplate :
+
+   ```bash
+   git clone <URL-du-repository>
+   cd <dossier-du-projet>
+   ```
+
+2. Installe les dépendances :
+
+   Si tu utilises **npm** :
+
+   ```bash
+   npm install
+   ```
+
+   Ou si tu utilises **yarn** :
+
+   ```bash
+   yarn install
+   ```
+
+3. Crée un fichier `.env` à la racine du projet à partir du fichier `.example_env` fourni. Il contient la variable d'environnement suivante :
+
+   ```env
+   NEXT_PUBLIC_WORDPRESS_API=<URL-de-ton-API-WordPress>
+   ```
+
+   Remplace `<URL-de-ton-API-WordPress>` par l'URL de l'API REST de ton WordPress headless.
+
+## Structure du Projet
+
+Le projet est organisé de la manière suivante :
+
+```
+/pages
+  /index.js       - Page d'accueil avec tous les posts
+  /[slug].js      - Page pour afficher un post individuel
+
+/components
+  /PostList.js    - Composant pour afficher la liste des posts
+  /Post.js        - Composant pour afficher un post individuel
+```
+
+- **`/pages/index.js`** : Affiche la liste de tous les posts récupérés depuis l'API WordPress.
+- **`/pages/[slug].js`** : Affiche un post individuel en fonction de son "slug" (nom de l'URL).
+
+## Lancer le Projet
+
+Pour lancer le projet en mode développement, utilise la commande suivante :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ou, si tu utilises **yarn** :
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Le site sera accessible à l'adresse suivante : [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Déploiement
 
-To learn more about Next.js, take a look at the following resources:
+1. Crée une version optimisée du site pour la production :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run build
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Lance le serveur de production localement (optionnel) :
 
-## Deploy on Vercel
+   ```bash
+   npm start
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Remarques
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Ce projet utilise la version **Next.js 15.3.2** et **React 19**.
+- L'URL de l'API WordPress doit être correctement définie dans la variable `NEXT_PUBLIC_WORDPRESS_API` dans le fichier `.env`.
+- Les permaliens de ton WordPress headless doivent être configurés de manière à ressembler à `adresseweb.fr/exemple-article`.
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Si tu souhaites améliorer ce boilerplate, n'hésite pas à ouvrir une **issue** ou une **pull request**.
+
+## Licence
+
+Ce projet est sous licence MIT.
