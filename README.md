@@ -49,9 +49,10 @@ Le projet est organisé de la manière suivante :
 
 ```
 /src
-  /page.js       - Page d'accueil avec tous les posts
-  /[slug]
-    /page.js      - Page pour afficher un post individuel
+  /app
+    /page.js         - Page d'accueil avec tous les posts
+    /[slug]
+      /page.js       - Page pour afficher un post individuel
 ```
 
 - **`/pages/index.js`** : Affiche la liste de tous les posts récupérés depuis l'API WordPress.
