@@ -28,14 +28,18 @@ export default async function PostPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-3xl font-bold mb-4">{post.title.rendered}</h1>
-        <div
-          className="text-gray-600 whitespace-pre-wrap"
-          dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-        />
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-grow">
+        <div className="container mx-auto px-4 py-8">
+          <div className="bg-white rounded-lg shadow p-6">
+            <h1 className="text-3xl font-bold mb-4">{post.title.rendered}</h1>
+            <div
+              className="text-gray-600 whitespace-pre-wrap post-content"
+              dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+            />
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
