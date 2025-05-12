@@ -46,7 +46,7 @@ Avant de commencer, assure-toi d'avoir les éléments suivants :
 3. Crée un fichier `.env` à la racine du projet à partir du fichier `.example_env` fourni. Il contient la variable d'environnement suivante :
 
    ```env
-   NEXT_PUBLIC_WORDPRESS_API=<URL-de-ton-API-WordPress>
+   NEXT_PUBLIC_API_URL=<URL-de-ton-API-WordPress>
    ```
 
    Remplace `<URL-de-ton-API-WordPress>` par l'URL de l'API REST de ton WordPress headless.
